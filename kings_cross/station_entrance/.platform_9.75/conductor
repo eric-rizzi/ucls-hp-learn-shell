@@ -109,9 +109,9 @@ def question_four_correct() -> bool:
     return choice_question_correct(
         f"What is the correct way to cast the {bcolors.UNDERLINE}cat{bcolors.ENDC} spell?",
         {
-            "A": f"{bcolors.UNDERLINE}./note.txt cat{bcolors.ENDC}",
-            "B": f"{bcolors.UNDERLINE}cat./note.txt{bcolors.ENDC} (i.e. no space between {bcolors.UNDERLINE}cat{bcolors.ENDC} and the file)",
-            "C": f"{bcolors.UNDERLINE}cat ./note.txt{bcolors.ENDC} (i.e. space between {bcolors.UNDERLINE}cat{bcolors.ENDC} and the file)",
+            "A": f"{bcolors.UNDERLINE}note.txt cat{bcolors.ENDC}",
+            "B": f"{bcolors.UNDERLINE}catnote.txt{bcolors.ENDC} (i.e. no space between {bcolors.UNDERLINE}cat{bcolors.ENDC} and the file)",
+            "C": f"{bcolors.UNDERLINE}cat note.txt{bcolors.ENDC} (i.e. space between {bcolors.UNDERLINE}cat{bcolors.ENDC} and the file)",
         },
         "C",
     )
