@@ -40,3 +40,9 @@ Go!
 2. `docker login`
 3. `docker tag harry_potter erizzi/hp_terminal_tutorial`
 4. `docker push erizzi/hp_terminal_tutorial`
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the
+[LICENSE](LICENSE) file for details.
+
