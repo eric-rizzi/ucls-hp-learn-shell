@@ -8,12 +8,12 @@
             "In C200 behind printer",
             "In C200 under recycle bin",
             "Behind trash can in CS dept",
-            "On whiteboard in CS dept",
-            "Blue bin near Mr Rizzis desk",
+            "By staplers in CS dept",
+            "In blue bin near Mr Rizzis desk",
             "Behind door in CS dept",
-            "On refrigerator in CS dept",
+            "In microwave in CS dept",
             "Under Mr Rizzis desk",
-            "Under trash outside C224"
+            "In cupboard in CS dept"
         ],
         "yields": "00_terminal_opener.docx"
     },
@@ -45,25 +45,26 @@
         ],
         "clues": [
             [
-                "set variable x = 9",
+                "set variable x = 3",
                 "go to door of C224",
                 "take three steps into hallway",
                 "turn 90 degrees left",
                 "repeat (x times) walk past white stripe on floor",
-                "take three steps",
+                "turn 90 degrees right",
+                "take ten steps",
                 "turn 90 degrees left",
-                "take two steps forward",
-                "look behind door"
+                "take four steps forward",
+                "turn 90 degrees right"
             ],
             [
-                "set variable x = 4",
+                "set variable x = 11",
                 "go to door of C224",
                 "take three steps into hallway",
                 "turn 90 degrees left",
                 "repeat (x times) walk past white stripe on floor",
-                "take one big step",
                 "turn 90 degrees left",
-                "take two steps forward"
+                "take two steps forward",
+                "turn 90 degrees left"
             ],
             [
                 "set variable x = 11",
