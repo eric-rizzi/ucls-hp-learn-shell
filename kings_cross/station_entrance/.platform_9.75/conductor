@@ -156,4 +156,4 @@ if __name__ == "__main__":
         print("Good luck Harry!")
     else:
         print("\n\n")
-        print("... the conductor walked off. Look like you'll have to rerun the program!")
+        print("... the conductor walked off. Looks like you'll have to rerun the program!")
