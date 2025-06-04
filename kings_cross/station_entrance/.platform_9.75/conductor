@@ -90,7 +90,7 @@ def question_one_correct() -> bool:
 
 def question_two_correct() -> bool:
     return choice_question_correct(
-        "How would you apparate to hogsmeade?",
+        f"How would you {bcolors.BOLD}apparate{bcolors.ENDC} to {bcolors.BLUE}hogsmeade{bcolors.ENDC}?",
         {
             "A": f"{bcolors.UNDERLINE}cd hogsmeade{bcolors.ENDC}",
             "B": f"{bcolors.UNDERLINE}cd ./hogsmeade{bcolors.ENDC}",
@@ -121,33 +121,39 @@ def question_five_correct() -> bool:
     return text_question_correct("What color are programs?", "green")
 
 
-def run_conductor() -> None:
+def run_conductor() -> bool:
     print(CONDUCTOR)
     time.sleep(3)
     print("Trying to get on the train without paying???")
     time.sleep(3)
-    print("You're going to have to earn your way on by answering these questions")
+    print("You're going to have to earn your way on by answering these questions:")
 
     if not question_one_correct():
-        return
+        return False
 
     if not question_two_correct():
-        return
+        return False
 
     if not question_three_correct():
-        return
+        return False
 
     if not question_four_correct():
-        return
+        return False
 
     if not question_five_correct():
-        return
+        return False
 
     print("\n\n\n")
     print("Ok, I guess you earned your way. You can get on the train to hogwarts")
     print(f"Execute the spell {bcolors.UNDERLINE}sl{bcolors.ENDC} and good luck!")
     time.sleep(5)
+    return True
 
 
 if __name__ == "__main__":
-    run_conductor()
+    passed_conductor = run_conductor()
+    if passed_conductor:
+        print("Good luck Harry!")
+    else:
+        print("\n\n")
+        print("... the conductor walked off. Look like you'll have to rerun the program!")

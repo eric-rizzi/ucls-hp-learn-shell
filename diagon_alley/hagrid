@@ -66,10 +66,10 @@ def text_question_correct(question: str, answer: str) -> bool:
 
     response = input("Your answer: ")
     if response.lower().strip() == answer:
-        print("Seems like it might really be you...")
+        print("Correct! Seems like it might really be you...")
         return True
     else:
-        print("I'm afraid of a polyjuice imposter... not going to say anymore")
+        print("I'm afraid of a polyjuice potion imposter... I'm not going to say anymore.")
         return False
 
 
@@ -103,7 +103,7 @@ def question_one_correct() -> bool:
         "What is the best definition of abstraction?",
         {
             "A": "Weird over-priced art",
-            "B": "Removing unnecessary details",
+            "B": "Hiding unnecessary details",
             "C": "A stomach workout",
         },
         "B",
@@ -124,7 +124,7 @@ def question_two_correct() -> bool:
     )
 
 
-def run_hagrid() -> None:
+def run_hagrid() -> bool:
     print(HAGRID)
     time.sleep(3)
     print("Harry, is that you? Can't be too careful!")
@@ -133,15 +133,21 @@ def run_hagrid() -> None:
     print("Answer these questions that only you would know...")
 
     if not question_one_correct():
-        return
+        return False
 
     if not question_two_correct():
-        return
+        return False
 
     print("\n\n\n")
-    print("Phew, it's you! Hogwarts is in danger. First, you're going to need")
-    print(f"""a new spell: {bcolors.UNDERLINE}ls -al{bcolors.ENDC}. It's like "revelio" (lumos on steroids) and""")
-    print("will show you hidden objects.")
+    print("Phew, it really is you!")
+    time.sleep(2)
+    print("\n\n\n")
+    print("Harry, Hogwarts is in danger! To help you, I'm going to quickly")
+    print(f"teach you a new spell: {bcolors.UNDERLINE}ls -al{bcolors.ENDC}.")
+    time.sleep(2)
+    print("\n\n\n")
+    print("""It's like "revelio" (lumos on steroids) and will show you hidden""")
+    print(f"objects that a normal {bcolors.UNDERLINE}ls{bcolors.ENDC} wouldn't show you.")
     print("\n\n\n")
     time.sleep(10)
 
@@ -178,7 +184,13 @@ def run_hagrid() -> None:
     print(f"Ok, that's all I have for you. Apparate to Kings Crossing: {bcolors.BLUE}/kings_cross{bcolors.ENDC}")
     print("and go save Hogwarts!")
     time.sleep(5)
+    return True
 
 
 if __name__ == "__main__":
-    run_hagrid()
+    passed_hagrid = run_hagrid()
+    if passed_hagrid:
+        print("Good luck Harry!")
+    else:
+        print("\n\n")
+        print("... Hagrid walked off. Look like you'll have to try again!")
