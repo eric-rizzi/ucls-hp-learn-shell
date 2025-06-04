@@ -193,4 +193,4 @@ if __name__ == "__main__":
         print("Good luck Harry!")
     else:
         print("\n\n")
-        print("... Hagrid walked off. Look like you'll have to try again!")
+        print("... Hagrid walked off. Looks like you'll have to rerun the program!!")
