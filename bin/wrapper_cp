@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Store the original arguments
+original_args="$@"
+
+# Execute the actual cp command first
+/bin/cp "$@"
+cp_exit_code=$?
+
+# Only provide special feedback if cp was successful
+if [ $cp_exit_code -eq 0 ]; then
+    # Check if monster_friend.txt now exists and has the same content as monster.txt
+    if [ -f "/var/hogwarts_castle/front_door/monster_friend.txt" ] && [ -f "/var/hogwarts_castle/front_door/monster.txt" ]; then
+        if cmp -s "/var/hogwarts_castle/front_door/monster.txt" "/var/hogwarts_castle/front_door/monster_friend.txt"; then
+            echo ""
+            echo "🎉 Well done, Harry! You've successfully made a copy of the monster!"
+            echo "It will now stop terrorizing the grounds and being so cynical all the time."
+            echo ""
+            echo "Your mission is complete! Go back and talk to Dumbledore to see what's next."
+            echo ""
+        fi
+    fi
+fi
+
+# Exit with the same code as the original cp command
+exit $cp_exit_code
