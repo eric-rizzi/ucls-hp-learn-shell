@@ -37,8 +37,8 @@ Go!
 ## Instructions to Push
 
 1. `docker build -f Dockerfile -t harry_potter .`
-2. `docker login`
-3. `docker tag harry_potter erizzi/hp_terminal_tutorial`
+2. `docker tag harry_potter erizzi/hp_terminal_tutorial`
+3. `docker login`
 4. `docker push erizzi/hp_terminal_tutorial`
 
 ## License
