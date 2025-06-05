@@ -144,7 +144,7 @@ def run_conductor() -> bool:
         return False
 
     print("\n\n\n")
-    print("Ok, I guess you earned your way. You can get on the train to hogwarts")
+    print("Ok, I guess you earned your way. You can get on the train to hogwarts.")
     print(f"Execute the spell {bcolors.UNDERLINE}express{bcolors.ENDC} and good luck!")
     time.sleep(5)
     return True
@@ -153,7 +153,7 @@ def run_conductor() -> bool:
 if __name__ == "__main__":
     passed_conductor = run_conductor()
     if passed_conductor:
-        print("Good luck Harry!")
+        print("Good luck Harry. I knew it was you all along.")
     else:
         time.sleep(3)
         print("\n\n")
