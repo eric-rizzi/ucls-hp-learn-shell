@@ -144,7 +144,7 @@ def run_hagrid() -> bool:
     print("\n\n\n")
     print("Harry, Hogwarts is in danger! To help you, I'm going to quickly")
     print(f"teach you a new spell: {bcolors.UNDERLINE}ls -al{bcolors.ENDC}.")
-    time.sleep(2)
+    time.sleep(10)
     print("\n\n\n")
     print("""It's like "revelio" (lumos on steroids) and will show you hidden""")
     print(f"objects that a normal {bcolors.UNDERLINE}ls{bcolors.ENDC} wouldn't show you.")
@@ -177,10 +177,10 @@ def run_hagrid() -> bool:
     print(f"I'd STRONGLY suggest writing {bcolors.UNDERLINE}ls -al{bcolors.ENDC} in your spell book for when")
     print(f"a directory seems empty even after you use {bcolors.UNDERLINE}ls{bcolors.ENDC}.")
     print("\n\n\n")
-    time.sleep(5)
+    time.sleep(10)
     print("I'm waiting... are your writing?")
     print("\n\n\n")
-    time.sleep(15)
+    time.sleep(10)
     print(f"Ok, that's all I have for you. Apparate to Kings Crossing: {bcolors.BLUE}/kings_cross{bcolors.ENDC}")
     print("and go save Hogwarts!")
     time.sleep(5)
@@ -192,5 +192,6 @@ if __name__ == "__main__":
     if passed_hagrid:
         print("Good luck Harry!")
     else:
+        time.sleep(3)
         print("\n\n")
         print("... Hagrid walked off. Looks like you'll have to rerun the program!!")
