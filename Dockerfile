@@ -29,7 +29,7 @@ WORKDIR /home/harry
 
 RUN yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-RUN echo "alias sl=\"/usr/games/sl -F && cd /hogwarts\"" >> /home/harry/.zshrc
+RUN echo "alias express=\"/usr/games/sl -F && cd /hogwarts\"" >> /home/harry/.zshrc
 RUN echo "alias cat=\"/usr/bin/wrapper_cat\"" >> /home/harry/.zshrc
 RUN echo "alias cp=\"/usr/bin/wrapper_cp\"" >> /home/harry/.zshrc
 RUN echo "setuphp" >> /home/harry/.zshrc

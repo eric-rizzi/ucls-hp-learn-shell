@@ -145,7 +145,7 @@ def run_conductor() -> bool:
 
     print("\n\n\n")
     print("Ok, I guess you earned your way. You can get on the train to hogwarts")
-    print(f"Execute the spell {bcolors.UNDERLINE}sl{bcolors.ENDC} and good luck!")
+    print(f"Execute the spell {bcolors.UNDERLINE}express{bcolors.ENDC} and good luck!")
     time.sleep(5)
     return True
 
