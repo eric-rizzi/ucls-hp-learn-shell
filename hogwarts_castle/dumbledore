@@ -81,14 +81,14 @@ def run_dumbledore_intro() -> None:
     print(f'To **search** for a particular spell, do {bcolors.UNDERLINE}grep "PHRASE" spell_book.txt{bcolors.ENDC}')
     time.sleep(10)
     print("\n\n\n")
-    print(f"Note that you need the double quotations around the word you're looking for.")
+    print(f"Note that you need the double quotes around the word you're looking for.")
     time.sleep(5)
     print("\n\n\n")
     print("Let's try an example now!")
     print("\n\n\n")
     time.sleep(3)
     print(
-        f'Let\'s say you want to find all instances of "hello" in the {bcolors.BOLD}spell_book.txt{bcolors.ENDC} file'
+        f'Let\'s say you want to find all instances of {bcolors.BOLD}"hello"{bcolors.ENDC} in the {bcolors.BOLD}spell_book.txt{bcolors.ENDC} file'
     )
     time.sleep(3)
     grep_cmd = input("What would you type? ")
@@ -97,7 +97,7 @@ def run_dumbledore_intro() -> None:
 
     print("\n\n\n")
     print("Excellent!")
-    print('One pattern I know will be quite helpful is "Tab Complete"')
+    print(f'One pattern I know will be quite helpful is {bcolors.BOLD}"Tab Complete"{bcolors.ENDC}')
     print(
         f'Search for it in the spell book by doing {bcolors.UNDERLINE}grep "Tab Complete" spell_book.txt{bcolors.ENDC}'
     )
