@@ -61,11 +61,11 @@ DUMBLEDORE = """
 
 
 class bcolors:
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    ENDC = '\033[0m'
+    BLUE = "\033[94m"
+    GREEN = "\033[92m"
+    BOLD = "\033[1m"
+    UNDERLINE = "\033[4m"
+    ENDC = "\033[0m"
 
 
 def run_dumbledore_intro() -> None:
@@ -79,12 +79,17 @@ def run_dumbledore_intro() -> None:
     print("The monsters will need some special spells to defeat them.")
     print(f"Next to me is a spell book called {bcolors.BOLD}spell_book.txt{bcolors.ENDC}... use it learn new spells.")
     print(f'To **search** for a particular spell, do {bcolors.UNDERLINE}grep "PHRASE" spell_book.txt{bcolors.ENDC}')
-    time.sleep(15)
+    time.sleep(10)
+    print("\n\n\n")
+    print(f"Note that you need the double quotations around the word you're looking for.")
+    time.sleep(5)
     print("\n\n\n")
     print("Let's try an example now!")
     print("\n\n\n")
     time.sleep(3)
-    print(f"Let's say you want to find all instances of \"hello\" in the {bcolors.BOLD}spell_book.txt{bcolors.ENDC} file")
+    print(
+        f'Let\'s say you want to find all instances of "hello" in the {bcolors.BOLD}spell_book.txt{bcolors.ENDC} file'
+    )
     time.sleep(3)
     grep_cmd = input("What would you type? ")
     while grep_cmd != 'grep "hello" spell_book.txt':
@@ -93,8 +98,11 @@ def run_dumbledore_intro() -> None:
     print("\n\n\n")
     print("Excellent!")
     print('One pattern I know will be quite helpful is "Tab Complete"')
-    print(f'Search for it in the spell book by doing {bcolors.UNDERLINE}grep "Tab Complete" spell_book.txt{bcolors.ENDC}')
-    time.sleep(15)
+    print(
+        f'Search for it in the spell book by doing {bcolors.UNDERLINE}grep "Tab Complete" spell_book.txt{bcolors.ENDC}'
+    )
+    time.sleep(10)
+    print("\n\n\n")
     print("Once you're done defeating both monsters, come see me for your prize!")
     time.sleep(5)
     print("Good luck Harry!")
@@ -112,7 +120,7 @@ def run_dumbledore_outro() -> None:
     print("2. Open up a new terminal by:")
     print("    - Clicking `Shell` on the top menu")
     print("    - Clicking `New Window`")
-    print(f"3. Run the spell {bcolors.UNDERLINE}say I won give me candy Mr Rizzi{bcolors.ENDC}")
+    print(f'3. Run the spell {bcolors.UNDERLINE}say "I won give me candy Mr Rizzi"{bcolors.ENDC}')
     time.sleep(3)
 
 
@@ -124,8 +132,7 @@ def run_dumbledore_so_close() -> None:
 
 
 if __name__ == "__main__":
-    # monster_1_alive = os.path.isfile("/var/hogwarts_castle/back_gate/monster.txt")
-    back_gate_done = True
+    back_gate_done = not os.path.isfile("/var/hogwarts_castle/back_gate/monster.txt")
     front_door_done = os.path.isfile("/var/hogwarts_castle/front_door/monster_friend.txt")
 
     if not back_gate_done and not front_door_done:
@@ -134,4 +141,3 @@ if __name__ == "__main__":
         run_dumbledore_so_close()
     else:
         run_dumbledore_outro()
-

@@ -14,12 +14,13 @@ COPY ./hogwarts /hogwarts
 COPY ./hogsmeade /hogsmeade
 COPY ./kings_cross /kings_cross
 COPY ./diagon_alley /diagon_alley
+COPY ./wilderness /wilderness
 COPY ./hogwarts_castle /var/hogwarts_castle
 COPY ./clues /metadata
 COPY ./harry_home /home/harry
 
 RUN useradd -ms /bin/bash harry && \
-    chown -R harry /var/hogwarts_castle/front_door && \
+    chown -R harry /var/hogwarts_castle && \
     chown -R harry /hogwarts/crumpled_maze_clue.txt && \
     chown -R harry /home/harry
 

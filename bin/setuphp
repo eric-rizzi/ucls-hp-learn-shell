@@ -1,46 +1,46 @@
 #!/usr/bin/env python3
 import json
 import os
+import shutil
 import typing
 
-
 MORSE_DICT = {
-    'A': '._',
-    'B': '_...',
-    'C': '_._.',
-    'D': '_..',
-    'E': '.',
-    'F': '.._.',
-    'G': '__.',
-    'H': '....',
-    'I': '..',
-    'J': '.___',
-    'K': '_._',
-    'L': '._..',
-    'M': '__',
-    'N': '_.',
-    'O': '___',
-    'P': '.__.',
-    'Q': '__._',
-    'R': '._.',
-    'S': '...',
-    'T': '_',
-    'U': '.._',
-    'V': '..._',
-    'W': '.__',
-    'X': '_.._',
-    'Y': '_.__',
-    'Z': '__..',
-    '1': '.____',
-    '2': '..___',
-    '3': '...__',
-    '4': '...._',
-    '5': '.....',
-    '6': '_....',
-    '7': '__...',
-    '8': '___..',
-    '9': '____.',
-    '0': '_____',
+    "A": "._",
+    "B": "_...",
+    "C": "_._.",
+    "D": "_..",
+    "E": ".",
+    "F": ".._.",
+    "G": "__.",
+    "H": "....",
+    "I": "..",
+    "J": ".___",
+    "K": "_._",
+    "L": "._..",
+    "M": "__",
+    "N": "_.",
+    "O": "___",
+    "P": ".__.",
+    "Q": "__._",
+    "R": "._.",
+    "S": "...",
+    "T": "_",
+    "U": ".._",
+    "V": "..._",
+    "W": ".__",
+    "X": "_.._",
+    "Y": "_.__",
+    "Z": "__..",
+    "1": ".____",
+    "2": "..___",
+    "3": "...__",
+    "4": "...._",
+    "5": ".....",
+    "6": "_....",
+    "7": "__...",
+    "8": "___..",
+    "9": "____.",
+    "0": "_____",
 }
 
 
@@ -64,24 +64,29 @@ def do_dewey_code(output_file: str, dewey_code: str) -> None:
 
 def do_final_clue(output_file: str, program: typing.List[str], sign: str) -> None:
     with open(output_file, "w") as output_fp:
-        output_fp.write(f'Run the following program:')
-        output_fp.write(f'\n\n')
-        output_fp.write(f'```')
-        output_fp.write(f'\n')
+        output_fp.write(f"Run the following program:")
+        output_fp.write(f"\n\n")
+        output_fp.write(f"```")
+        output_fp.write(f"\n")
 
         for loc in program:
             output_fp.write(loc)
             output_fp.write("\n")
 
         output_fp.write(f'turn over the "{sign}" sign')
-        output_fp.write(f'\n')
-        output_fp.write(f'```')
+        output_fp.write(f"\n")
+        output_fp.write(f"```")
         output_fp.write("\n\n\n")
+
+
+def do_setup_back_gate() -> None:
+    shutil.copytree("/wilderness", "/var/hogwarts_castle/back_gate")
 
 
 def setup_harry_potter() -> None:
     MAX_GROUPS = 11
     index = int(os.environ.get("IDENTIFIER", "0"))
+    is_hard_mode = int(os.environ.get("HARD_MODE", "0")) == 1
 
     # Load and validate data
     with open("/metadata/metadata.json", "r") as md_fp:
@@ -99,7 +104,7 @@ def setup_harry_potter() -> None:
     dewey_code = json_dict["1"]["clues"][index]
     do_dewey_code("/hogwarts/crumpled_maze_clue.txt", dewey_code)
 
-    # Program point 
+    # Program point
     program_index = int(index / len(json_dict["2"]["signs"]))
     sign_index = int(index % len(json_dict["2"]["signs"]))
 
@@ -110,7 +115,9 @@ def setup_harry_potter() -> None:
 
     do_final_clue("/var/hogwarts_castle/front_door/.under_rock.txt", program, sign)
 
+    if is_hard_mode:
+        do_setup_back_gate()
+
 
 if __name__ == "__main__":
     setup_harry_potter()
-
