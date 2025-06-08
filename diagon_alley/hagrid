@@ -94,7 +94,7 @@ def choice_question_correct(
             print("Seems like it might really be you...")
         return True
     else:
-        print("I'm afraid of a polyjuice imposter... not going to say anymore")
+        print("I'm afraid of a polyjuice potion imposter... not going to say anymore")
         return False
 
 

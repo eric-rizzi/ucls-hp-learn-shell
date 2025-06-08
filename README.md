@@ -24,15 +24,16 @@ Go!
 
 1. Pull down docker image from [here](https://hub.docker.com/r/erizzi/hp_terminal_tutorial)
 2. Run the docker image
-    - `docker run -e IDENTIFIER=4 -it erizzi/hp_terminal_tutorial /bin/zsh`
-    - Alter the `IDENTIFIER` env var to choose which of the 12 clue sets use
+    - `docker run -e IDENTIFIER=4 HARD_MODE=0 -it erizzi/hp_terminal_tutorial /bin/zsh`
+    - Alter the `IDENTIFIER` env var to choose which of the 12 clue sets to use
+    - Set `HARD_MODE=1` for an extra challenge involving `grep`, `rm` and caeser ciphers
 3. Use the [clues](./clues) folder to see what the students would see
 
 ## Instructions to Build
 
 1. Alter the [metadata.json](./clues/metadata.json) file to create location specific clues
 2. `docker build -f Dockerfile -t harry_potter .`
-3. `docker run -e IDENTIFIER=4 -it harry_potter`
+3. `docker run -e IDENTIFIER=4 HARD_MODE=0 -it harry_potter`
 
 ## Instructions to Push
 

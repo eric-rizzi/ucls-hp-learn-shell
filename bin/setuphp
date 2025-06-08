@@ -85,8 +85,14 @@ def do_setup_back_gate() -> None:
 
 def setup_harry_potter() -> None:
     MAX_GROUPS = 11
-    index = int(os.environ.get("IDENTIFIER", "0"))
-    is_hard_mode = int(os.environ.get("HARD_MODE", "0")) == 1
+    index = int(os.environ.get("IDENTIFIER", "-1"))
+    if index < 0 or index > 11:
+        print("Please set the IDENTIFIER env var to a value between 0-11")
+        index = 0 # Allow to run with the warning
+    turn_on_hard_mode = int(os.environ.get("HARD_MODE", "-1"))
+    if turn_on_hard_mode not in [0, 1]:
+        print("Please set the HARD_MODE env var to either 0 (false) or 1 (true)")
+
 
     # Load and validate data
     with open("/metadata/metadata.json", "r") as md_fp:
@@ -115,7 +121,7 @@ def setup_harry_potter() -> None:
 
     do_final_clue("/var/hogwarts_castle/front_door/.under_rock.txt", program, sign)
 
-    if is_hard_mode:
+    if turn_on_hard_mode == 1:
         do_setup_back_gate()
 
 
