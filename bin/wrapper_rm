@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Store the original arguments
+original_args="$@"
+
+# Execute the actual rm command first
+/bin/rm "$@"
+rm_exit_code=$?
+
+# Only provide special feedback if rm was successful
+if [ $rm_exit_code -eq 0 ]; then
+    if [ ! -f "/var/hogwarts_castle/back_gate/monster.txt" ]; then
+        echo ""
+        echo "🎉 Well done, Harry! You've banished the monster from the back gate!"
+        echo ""
+        echo "Your mission is complete! Go and talk to Dumbledore to see what remains to be done."
+        echo ""
+    fi
+fi
+
+# Exit with the same code as the original rm command
+exit $rm_exit_code
