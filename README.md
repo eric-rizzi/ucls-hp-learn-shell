@@ -32,13 +32,13 @@ Go!
 ## Instructions to Build
 
 1. Alter the [metadata.json](./clues/metadata.json) file to create location specific clues
-2. `docker build -f Dockerfile -t harry_potter .`
-3. `docker run -e IDENTIFIER=4 HARD_MODE=0 -it harry_potter`
+2. `docker build -f Dockerfile -t wizard_terminal .`
+3. `docker run -e IDENTIFIER=4 -e HARD_MODE=0 -it wizard_terminal`
 
 ## Instructions to Push
 
-1. `docker build -f Dockerfile -t harry_potter .`
-2. `docker tag harry_potter erizzi/hp_terminal_tutorial`
+1. `docker build -f Dockerfile -t wizard_terminal .`
+2. `docker tag wizard_terminal erizzi/hp_terminal_tutorial`
 3. `docker login`
 4. `docker push erizzi/hp_terminal_tutorial`
 
