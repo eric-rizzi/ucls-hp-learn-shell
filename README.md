@@ -29,6 +29,9 @@ Go!
     - Alter the `IDENTIFIER` env var to choose which of the 12 clue sets to use (0-11)
     - Set `HARD_MODE=1` for an extra challenge involving `grep`, `rm` and caeser ciphers
 3. Use the [clues](./clues) folder to see what real-world clues students would find
+    - Solving the morse code clue leads to `./clues/00_terminal_opener.docx`
+    - Solving the dewey decimal clue leads to `./clues/01_terminal_maze.docx`
+    - Solving the "execute program" clue leads to `./clues/02_terminal_monsters.docx`
 
 ## Instructions to Build and Run
 
